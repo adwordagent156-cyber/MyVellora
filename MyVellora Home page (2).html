@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyVellora | Wellness Retreat Growth Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <meta name="description" content="MyVellora is a specialist wellness retreat sales and marketing consulting partner helping retreats grow bookings through strategy, guidance, training, and growth accountability." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      color: #24352f;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      padding: 28px 7% 70px;
+      background: linear-gradient(rgba(251, 250, 245, 0.92), rgba(251, 250, 245, 0.9)),
+        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.7);
+      padding: 12px 18px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 26px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .hero-badge i {
+      color: #c59d3f;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #2f5d50;
+    }
+
+    .nav-link {
+      color: #2f5d50;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid #2f5d50;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .hero-content {
+      max-width: 830px;
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      height: 680px;
+      object-fit: cover;
+      border-radius: 36px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+      border: 8px solid rgba(255,255,255,0.75);
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border: 2px solid rgba(197,157,63,0.35);
+      border-radius: 36px;
+      right: -18px;
+      top: 24px;
+      z-index: -1;
+    }
+
+    .eyebrow {
+      color: #8b6f3d;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      color: #1f4037;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin-bottom: 34px;
+      color: #405951;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2f5d50;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(47, 93, 80, 0.2);
+    }
+
+    .secondary-button {
+      display: inline-block;
+      color: #2f5d50;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid #2f5d50;
+      margin-left: 12px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    section {
+      padding: 82px 7%;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      color: #1f4037;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      max-width: 790px;
+      font-size: 18px;
+      color: #52665f;
+      margin-bottom: 42px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid #eee8da;
+      box-shadow: 0 12px 34px rgba(36, 53, 47, 0.07);
+    }
+
+    .stat-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef3ea;
+      margin-bottom: 18px;
+      font-size: 24px;
+      color: #2f5d50;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: #2f5d50;
+      margin-bottom: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      background: #fff;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 14px 40px rgba(36, 53, 47, 0.08);
+      border: 1px solid #eee8da;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(36, 53, 47, 0.12);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef3ea;
+      color: #2f5d50;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .card-image {
+      width: calc(100% + 60px);
+      margin: -30px -30px 24px;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #2f5d50;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .highlight {
+      background: #eef3ea;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .list li {
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border-left: 4px solid #8b6f3d;
+      box-shadow: 0 10px 28px rgba(36, 53, 47, 0.06);
+    }
+
+    .process {
+      counter-reset: step;
+    }
+
+    .process .card::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f6d78b;
+      color: #1f4037;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #1f4037;
+      color: #fff;
+    }
+
+    .contact h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    .contact p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: #dce8e3;
+      font-size: 18px;
+    }
+
+    .contact .button {
+      background: #f6d78b;
+      color: #1f4037;
+    }
+
+    footer {
+      padding: 24px 7%;
+      text-align: center;
+      background: #172f29;
+      color: #c9d8d2;
+      font-size: 14px;
+    }
+
+    .popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    padding:20px;
+}
+
+.popup-content{
+    background:#fff;
+    width:100%;
+    max-width:600px;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+    max-height:90vh;
+    overflow:auto;
+}
+
+.close-popup{
+    position:absolute;
+    right:20px;
+    top:12px;
+    font-size:30px;
+    cursor:pointer;
+    color:#2f5d50;
+}
+
+#retreatForm{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:20px;
+}
+
+#retreatForm input,
+#retreatForm select,
+#retreatForm textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+}
+
+#retreatForm button{
+    background:#2f5d50;
+    color:#fff;
+    border:none;
+    padding:15px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+#successMessage h2{
+    color:#2f5d50;
+    margin-bottom:15px;
+}
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-image img {
+        height: 480px;
+      }
+      .cards,
+      .split,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        margin-bottom: 55px;
+      }
+
+      section {
+        padding: 64px 6%;
+      }
+
+      .secondary-button {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+      .nav-link {
+        font-size:12px;
+        padding: 8px;
+      }
+      .logo{
+        font-size:17px;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function () {
+    emailjs.init({
+        publicKey: "xKIZ-EybDn3jU5H3X"
+    });
+})();
+</script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MyVellora</div>
+      <div><a class="nav-link" href="mailto:support@myvellora.com">Contact Us</a>
+      <a class="nav-link" href="tel:+91 9311369203">+91 9311369203</a>
+      </div> 
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Specialist Wellness Retreat Consulting</span>
+      </div>
+      <div class="eyebrow">Wellness Retreat Growth Platform</div>
+      <h1>Helping wellness retreats grow beyond bookings.</h1>
+      <p>
+        MyVellora helps wellness retreats grow bookings, reduce dependency on OTAs, and build a stronger direct-growth system through strategy, guidance, training, and accountability.
+      </p>
+      <!-- <a class="button" href="mailto:support@myvellora.com?subject=MyVellora%20Consulting%20Inquiry">Start a Conversation</a> -->
+      <a class="button open-retreat-form" href="javascript:void(0);">Start a Conversation</a>
+      <a class="secondary-button" href="#how">How We Help</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Luxury Wellness Retreat">
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">The wellness retreat market is growing. But many retreats are still missing a growth partner.</h2>
+    <p class="section-copy">
+      Retreats often rely heavily on OTAs, lose margin through commissions, and expect the GM or internal team to handle sales, marketing, follow-ups, and bookings. MyVellora fills the gap as a specialist consulting partner focused only on wellness retreat growth.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-percent"></i></div>
+        <strong>15–25%</strong>
+        OTA commissions can reduce retreat margins.
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <strong>Strategy</strong>
+        Clear sales and marketing direction for the property.
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-compass"></i></div>
+        <strong>Guidance</strong>
+        Ongoing review, training, and course correction.
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="highlight">
+    <div class="split">
+      <div>
+        <h2 class="section-title">A consulting partner built around two pillars.</h2>
+        <p class="section-copy">
+          Strategy without guidance stays on paper. Guidance without strategy goes in circles. MyVellora brings both together to help wellness retreats move from scattered activity to focused growth.
+        </p>
+      </div>
+      <ul class="list">
+        <li><strong>Strategic Consulting:</strong> diagnose gaps, design positioning, define channels, and build the retreat growth roadmap.</li>
+        <li><strong>Ongoing Growth Guidance:</strong> weekly reviews, sales training, campaign direction, and practical course correction.</li>
+        <li><strong>Growth Accountability:</strong> focus on enquiries, bookings, and business outcomes — not just marketing activity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why retreats choose MyVellora</h2>
+    <p class="section-copy">
+      MyVellora is not a general marketing agency. It is designed as a specialist wellness retreat consulting partner that understands the guest journey, sales process, and trust required to convert wellness-intent travellers.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <img class="card-image" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Wellness Retreat">
+        <div class="card-icon"><i class="fa-solid fa-spa"></i></div>
+        <h3>Wellness-Only Focus</h3>
+        <p>We understand retreats, healing stays, yoga-led experiences, holistic retreats, and wellness travellers.</p>
+      </div>
+      <div class="card">
+        <img class="card-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Consulting Strategy">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Sales + Marketing Together</h3>
+        <p>We support the complete journey, from brand messaging and campaign direction to enquiry follow-up and booking conversion.</p>
+      </div>
+      <div class="card">
+        <img class="card-image" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Growth Consulting">
+        <div class="card-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+        <h3>Hands-On Consulting</h3>
+        <p>Your team executes. MyVellora guides, reviews, trains, and helps refine what works every week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <h2 class="section-title">How the engagement works</h2>
+    <p class="section-copy">
+      Every retreat starts with discovery and strategy, then moves into guidance, review, training, and growth partnership depending on the retreat’s goals.
+    </p>
+
+    <div class="cards process">
+      <div class="card">
+        <h3>Discovery & Strategy</h3>
+        <p>We study your retreat, audience, current channels, sales gaps, offer structure, and guest journey.</p>
+      </div>
+      <div class="card">
+        <h3>Guided Execution</h3>
+        <p>Your team implements the plan while MyVellora provides weekly consulting, direction, and training.</p>
+      </div>
+      <div class="card">
+        <h3>Growth Partnership</h3>
+        <p>As results improve, we support deeper decisions around campaigns, partnerships, sales systems, and scaling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Built for serious wellness properties</h2>
+    <p class="section-copy">
+      MyVellora is ideal for wellness retreats and retreat properties that already have a strong experience but need better growth systems, stronger positioning, and more consistent enquiries.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+        <h3>Wellness Retreats</h3>
+        <p>Properties offering wellness stays, healing programs, detox, yoga, Ayurveda, mindfulness, or holistic experiences.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+        <h3>Retreat Centres</h3>
+        <p>Destinations that host retreats but need stronger visibility, positioning, and partner-driven promotion.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3>Retreat Teams</h3>
+        <p>Teams that want expert direction without hiring a full internal sales and marketing department immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let’s build your retreat growth system.</h2>
+    <p>
+      If your wellness retreat needs a trusted consulting partner for strategy, sales guidance, marketing direction, and booking growth, connect with MyVellora.
+    </p>
+    <a class="button" href="mailto:support@myvellora.com?subject=MyVellora%20Consulting%20Inquiry">Contact Us: +91 9311369203</a>
+  </section>
+
+  <footer>
+    © 2026 MyVellora. Wellness Retreat Growth Platform. Powered by Trexova.
+  </footer>
+  <div id="retreatPopup" class="popup-overlay">
+
+    <div class="popup-content">
+
+        <span class="close-popup">&times;</span>
+
+        <div id="formWrapper">
+
+            <h2>Let's Grow Your Retreat</h2>
+
+            <form id="retreatForm">
+
+                <input type="text" name="full_name" placeholder="Full Name *" required>
+
+                <input type="text" name="retreat_name" placeholder="Retreat Name *" required>
+
+                <input type="url" name="website_url" placeholder="Website URL *" required>
+
+                <input type="text" name="country" placeholder="Country *" required>
+
+                <select name="biggest_challenge" required>
+                    <option value="">Biggest Challenge *</option>
+                    <option>Getting More Bookings</option>
+                    <option>Marketing Strategy</option>
+                    <option>Lead Generation</option>
+                    <option>Sales Process</option>
+                    <option>Brand Positioning</option>
+                    <option>OTA Dependency</option>
+                </select>
+
+                <input type="tel" name="phone" placeholder="Phone Number *" required>
+
+                <input type="email" name="email" placeholder="Email Address *" required>
+
+                <textarea
+                    name="retreat_details"
+                    rows="5"
+                    placeholder="Tell us about your retreat (Optional)"></textarea>
+
+                <button type="submit" id="submitBtn">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+        <div id="successMessage" style="display:none;text-align:center;">
+            <h2>Thank You!</h2>
+
+            <p>
+                Thank you for your interest in MyVellora.
+                Our team will review your retreat details and schedule a discovery call within 24 hours.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<script>
+emailjs.init({
+  publicKey: "xKIZ-EybDn3jU5H3X"
+});
+</script>
+<script>
+
+const popup = document.getElementById("retreatPopup");
+
+document.querySelector(".open-retreat-form")
+.addEventListener("click", function () {
+    popup.style.display = "flex";
+});
+
+document.querySelector(".close-popup")
+.addEventListener("click", function () {
+    popup.style.display = "none";
+});
+
+window.addEventListener("click", function (e) {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
+
+document.getElementById("retreatForm")
+.addEventListener("submit", async function (e) {
+
+    e.preventDefault();
+
+    const form = this;
+
+    const fullName = form.full_name.value.trim();
+    const retreatName = form.retreat_name.value.trim();
+    const websiteUrl = form.website_url.value.trim();
+    const country = form.country.value.trim();
+    const challenge = form.biggest_challenge.value;
+    const phone = form.phone.value.trim();
+    const email = form.email.value.trim();
+    const retreatDetails = form.retreat_details.value.trim();
+
+    // Full Name Validation
+    if (!/^[A-Za-z\s]{2,50}$/.test(fullName)) {
+        alert("Please enter a valid Full Name");
+        return;
+    }
+
+    // Retreat Name Validation
+    if (retreatName.length < 2) {
+        alert("Please enter a valid Retreat Name");
+        return;
+    }
+
+    // Country Validation
+    if (!/^[A-Za-z\s]{2,50}$/.test(country)) {
+        alert("Please enter a valid Country Name");
+        return;
+    }
+
+    // Challenge Validation
+    if (challenge === "") {
+        alert("Please select your biggest challenge");
+        return;
+    }
+
+    // Phone Validation
+    if (!/^[0-9]{10,15}$/.test(phone)) {
+        alert("Please enter a valid Phone Number");
+        return;
+    }
+
+    // Email Validation
+    const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid Email Address");
+        return;
+    }
+
+    // Website Validation
+    try {
+        new URL(websiteUrl);
+    } catch {
+        alert("Please enter a valid Website URL");
+        return;
+    }
+
+    const btn = document.getElementById("submitBtn");
+
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+
+    try {
+
+        await emailjs.send(
+            "service_1bq9zo5",
+            "template_eqivyxn",
+            {
+                full_name: fullName,
+                retreat_name: retreatName,
+                website_url: websiteUrl,
+                country: country,
+                biggest_challenge: challenge,
+                phone: phone,
+                email: email,
+                retreat_details: retreatDetails
+            }
+        );
+
+        document.getElementById("formWrapper").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+
+        form.reset();
+
+        setTimeout(function () {
+
+            popup.style.display = "none";
+
+            document.getElementById("successMessage").style.display = "none";
+            document.getElementById("formWrapper").style.display = "block";
+
+            btn.disabled = false;
+            btn.innerHTML = "Submit";
+
+        }, 5000);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Something went wrong. Please try again.");
+
+        btn.disabled = false;
+        btn.innerHTML = "Submit";
+    }
+
+});
+
+</script>
+</body>
+</html>
